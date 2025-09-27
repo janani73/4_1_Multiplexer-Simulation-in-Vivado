@@ -35,7 +35,8 @@ To design and simulate a 4:1 Multiplexer (MUX) using Verilog HDL in four differe
 
 ### 4:1 MUX Gate-Level Implementation
 ```verilog
-module mux_41(I,S,Y);
+`timescale 1ns / 1ps
+module gate(I,S,Y);
 input [3:0]I;
 input[1:0]S;
 output Y;
@@ -60,7 +61,7 @@ wire Y;
 mux_41 uut(I,S,Y);
 initial
 begin
-I=4'B0001;
+I=4'10001;
 S=2'b00;
 #10
 $display("Selection is %b %b , output : %b ", S[1],S[0],Y);
@@ -80,7 +81,8 @@ endmodule
 ```
 ## Simulated Output Gate Level Modelling
 
-<img width="1015" height="600" alt="image" src="https://github.com/user-attachments/assets/f79f4d94-bcc9-4566-891a-9c837bafe194" />
+<img width="1622" height="969" alt="Screenshot 2025-09-27 093219" src="https://github.com/user-attachments/assets/2278b4e1-9ea1-43f5-835b-00b38ba7ed90" />
+
 
 
 
@@ -112,7 +114,7 @@ wire Y;
 mux_41 uut(I,S,Y);
 initial
 begin
-I=4'B0001;
+I=4'10001;
 S=2'b00;
 #10
 $display("Selection is %b %b , output : %b ", S[1],S[0],Y);
@@ -132,8 +134,8 @@ endmodule
 
 ```
 ## Simulated Output Dataflow Modelling
+<img width="1598" height="969" alt="Screenshot 2025-09-27 093239" src="https://github.com/user-attachments/assets/eb85ccb6-2baa-42b5-be75-7f3deeb8ae8e" />
 
-<img width="1015" height="610" alt="image" src="https://github.com/user-attachments/assets/602f3eca-4cba-4986-862d-15f7a451a2fa" />
 
 
 ### 4:1 MUX Behavioral Implementation
@@ -185,8 +187,8 @@ endmodule
 
 ```
 ## Simulated Output Behavioral Modelling
+<img width="1602" height="973" alt="Screenshot 2025-09-27 093259" src="https://github.com/user-attachments/assets/cf43bfaf-44fa-4843-95b0-cc665e867e97" />
 
-<img width="1015" height="598" alt="image" src="https://github.com/user-attachments/assets/f7cda868-2db0-4c99-ae2a-de557555373d" />
 
 
 
@@ -226,7 +228,7 @@ wire Y;
 MUX_41 uut(I,S,Y);
 initial
 begin
-I=4'B1000;
+I=4'B1001;
 S=2'b00;
 #10
 $display("Selection is %b %b , output : %b ", S[1],S[0],Y);
@@ -245,8 +247,8 @@ endmodule
 
 ```
 ## Simulated Output Structural Modelling
+<img width="1600" height="973" alt="Screenshot 2025-09-27 093329" src="https://github.com/user-attachments/assets/bb8569f0-960e-432f-894e-d8c2c01ed465" />
 
-<img width="1015" height="598" alt="image" src="https://github.com/user-attachments/assets/a22c21ab-fcdf-4e12-abc7-21035fe220cb" />
 
 
 
